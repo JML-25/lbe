@@ -2,28 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| LanguageByExample — Routes
-|--------------------------------------------------------------------------
-*/
+Route::get('/', fn() => redirect()->route('cards.index'));
 
-// Redirection racine vers la liste des fiches
-Route::get('/', function () {
-    return redirect()->route('cards.index');
-});
-
-// Gestion interactive (CRUD)
-Route::get('/cards', function () {
-    return view('cards.index');
-})->name('cards.index');
-
-// Import par lot
-Route::get('/cards/import', function () {
-    return view('cards.import');
-})->name('cards.import');
-
-// Révision
-Route::get('/cards/review', function () {
-    return view('cards.review');
-})->name('cards.review');
+Route::get('/cards',        fn() => view('cards.index'))->name('cards.index');
+Route::get('/cards/import', fn() => view('cards.import'))->name('cards.import');
+Route::get('/cards/review', fn() => view('cards.review'))->name('cards.review');
