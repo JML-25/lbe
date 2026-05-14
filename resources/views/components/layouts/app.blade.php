@@ -23,7 +23,8 @@
        class="{{ request()->routeIs('cards.review') ? 'active' : '' }}">
         Réviser
     </a>
-    <a href="/offline/index.html">
+    <a href="{{ route('offline') }}"
+       class="{{ request()->routeIs('offline') ? 'active' : '' }}">
         Réviser offline
     </a>
 </nav>
